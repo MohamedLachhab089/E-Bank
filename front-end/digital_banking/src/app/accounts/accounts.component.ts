@@ -10,6 +10,7 @@ import {AuthService} from "../services/auth.service";
   templateUrl: './accounts.component.html',
   styleUrl: './accounts.component.css'
 })
+// erreur 405 indique que la méthode HTTP utilisée pour l'opération n'est pas autorisée par le serveur.
 export class AccountsComponent implements OnInit {
   accountFormGroup!: FormGroup;
   currentPage: number = 0;
@@ -18,7 +19,7 @@ export class AccountsComponent implements OnInit {
   operationFromGroup!: FormGroup;
   errorMessage!: string;
 
-  constructor(private fb: FormBuilder, private accountService: AccountsService, public authService:AuthService) {
+  constructor(private fb: FormBuilder, private accountService: AccountsService, public authService: AuthService) {
   }
 
   ngOnInit() {
