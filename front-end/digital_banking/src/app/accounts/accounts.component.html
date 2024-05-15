@@ -6,7 +6,7 @@
         <div class="card-body">
           <form [formGroup]="accountFormGroup" (ngSubmit)="handleSearchAccount()">
             <div class="input-group">
-              <label class="input-group-text">Account Id :</label>
+              <label class="input-group-text">Account Id : </label>
               <input type="text" formControlName="accountId" class="form-control">
               <button class="btn btn-info">
                 <i class="bi bi-search"></i>
@@ -60,16 +60,16 @@
     <div class="col col-md-6">
       <div class="card" *ngIf="accountObservable">
         <div class="card-header">Operations</div>
-        <div class="card-body">
+        <div class="card-body" *ngIf="authService.roles.includes('ADMIN')">
 
           <form [formGroup]="operationFromGroup" (ngSubmit)="handleAccountOperation()" method="post">
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" formControlName="operationType" value="DEBIT">
-              <label class="form-check-label">DEBIT:</label>
+              <label class="form-check-label">DEBIT: </label>
             </div>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" formControlName="operationType" value="CREDIT">
-              <label class="form-check-label">CREDIT:</label>
+              <label class="form-check-label">CREDIT: </label>
             </div>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" formControlName="operationType" value="TRANSFER">
